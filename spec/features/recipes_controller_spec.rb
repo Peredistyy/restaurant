@@ -95,7 +95,7 @@ feature 'RecipesController', type: :api do
   describe 'update' do
     describe 'favorite = true' do
       it 'success' do
-        page.driver.put("/recipes/#{recipe.id}", {favorite: 'true'})
+        page.driver.put("/recipes/#{recipe.id}", {favorite: true})
 
         expect(page.status_code).to eq(200)
         recipe.reload
@@ -108,7 +108,7 @@ feature 'RecipesController', type: :api do
       it 'success' do
         recipe.favorite_marks.create(user: user)
 
-        page.driver.put("/recipes/#{recipe.id}", {favorite: 'false'})
+        page.driver.put("/recipes/#{recipe.id}", {favorite: false})
 
         expect(page.status_code).to eq(200)
         recipe.reload

@@ -14,8 +14,8 @@ class RecipesController < ApplicationController
   def update
     recipe = Recipe.find(params[:id])
 
-    recipe.mark_as_favorite(current_user) if params[:favorite] == 'true'
-    recipe.unmark_as_favorite(current_user) unless params[:favorite] == 'true'
+    recipe.mark_as_favorite(current_user) if ['true', true].include?(params[:favorite])
+    recipe.unmark_as_favorite(current_user) if ['false', false].include?(params[:favorite])
 
     render json: RecipeSerializer.new(recipe, {params: {current_user: current_user}}).serializable_hash
   end

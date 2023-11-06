@@ -16,7 +16,8 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.18.0",
     "sass": "^1.69.5",
-    "axios": "^1.6.0"
+    "axios": "^1.6.0",
+    "bootstrap-switch-button-react": "^1.2.0"
   },
   "browserslist": [
     "defaults"
